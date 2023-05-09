@@ -3,13 +3,13 @@ const fs = require('fs');
 
 
 function filesInfo() {
-  const dir = './secret-folder';
+  const dir = './03-files-in-folder/secret-folder';
   const dirFiles = [];
   fs.readdir(dir, (err, files) => {
     if (err) return console.error(err.message);
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
-      fs.stat(`./secret-folder/${file}`, (err, status) => {
+      fs.stat(`./03-files-in-folder/secret-folder/${file}`, (err, status) => {
         if (err) return console.error(err.message);
         if (status.isFile()) {
           fullData = path.parse(file)

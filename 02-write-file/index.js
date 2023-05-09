@@ -6,7 +6,7 @@ function writeFile() {
   stdin.on('data', data => {
     initFile();
     let text = data.toString();
-    fs.appendFile('text.txt', text, error => {
+    fs.appendFile('./02-write-file/text.txt', text, error => {
       const str = [...text].slice(0, -2).join('');
       if (error) {
         return console.error(error.message);
